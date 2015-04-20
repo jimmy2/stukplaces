@@ -1,34 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-3">
+    <h1><%= @place.name %></h1>
+    <p><strong>Address:</strong> <%= @place.address %></p>
+    <p><strong>Phone:</strong> <%= @place.phone %></p>
+    <p><strong>Website:</strong> <%= @place.website %></p>
+    <p><strong>Description:</strong> <%= @place.description %></p>
+    <div id="map-canvas" style="width: 230px; height: 230px;"></div> 
+  </div>
+  <div class="col-md-9">
+    <h1>Reviews</h1>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @place.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @place.website %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
 
     <script type="text/javascript">
       function initialize() {
@@ -47,10 +31,4 @@
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-<%= @place.latitude %>, 
-<%= @place.longitude %>
 
-<div id="map-canvas" style="width: 230px; height: 230px;"></div> 
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
